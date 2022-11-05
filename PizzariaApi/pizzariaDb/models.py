@@ -7,7 +7,6 @@ class Status(models.IntegerChoices):
     Efetuado = 2
     Entregue = 3
 
-
 class Produto(models.Model):
     id = models.IntegerField()
     codigo = models.CharField()
@@ -32,7 +31,7 @@ class Pedido(models.Model):
     codigo = models.CharField()
     pago = models.BooleanField()
     valorTotal = models.DecimalField()
-    metodoPagamentoId = user = models.ForeignKey(
+    metodoPagamento = user = models.ForeignKey(
         MetodosPagamento, on_delete=models.CASCADE, related_name="id"
     )
     nomeCliente = models.CharField()
